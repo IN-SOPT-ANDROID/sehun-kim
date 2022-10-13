@@ -9,7 +9,10 @@
 
 
     <!-- 로그인 뷰 -->
-    <string name="tv_login_kakaobtn">카카오로 시작하기</string>
-    <string name="tv_login_guide">로그인 후 이용이 가능합니다.</string>
-
+    <string name="tv_signin_idtxt">ID</string>
+    <string name="tv_signin_id">아이디를 입력하세요</string>
+    <string name="tv_signin_pwtxt">PW</string>
+    <string name="tv_signin_pw">비밀번호를 입력하세요</string>
+    <string name="tv_signin_loginbtn">LOGIN</string>
+    <string name="tv_signin_signupbtn">JOIN</string>
 </resources>
