@@ -1,3 +1,18 @@
 <resources>
     <string name="app_name">INSOPTAndroidPractice</string>
+
+
+    <!-- 바텀네비게이션 -->
+    <string name="bnv_main_home">홈</string>
+    <string name="bnv_main_write">기록하기</string>
+    <string name="bnv_main_storage">보관하기</string>
+
+
+    <!-- 로그인 뷰 -->
+    <string name="tv_signin_idtxt">ID</string>
+    <string name="tv_signin_id">아이디를 입력하세요</string>
+    <string name="tv_signin_pwtxt">PW</string>
+    <string name="tv_signin_pw">비밀번호를 입력하세요</string>
+    <string name="tv_signin_loginbtn">LOGIN</string>
+    <string name="tv_signin_signupbtn">JOIN</string>
 </resources>

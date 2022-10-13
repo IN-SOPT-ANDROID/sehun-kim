@@ -7,4 +7,22 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <!--recodreamcolor-->
+    <color name="black1_000000">#000000</color>
+    <color name="dark01_02040F">#02040F</color>
+    <color name="dark02_37333F">#37333F</color>
+    <color name="white01_FFFFFF">#FFFFFF</color>
+    <color name="white02_80FFFFFF">#80FFFFFF</color>
+    <color name="white03_66FFFFFF">#66FFFFFF</color>
+    <color name="white04_33FFFFFF">#33FFFFFF</color>
+    <color name="white05_1AFFFFFF">#1AFFFFFF</color>
+    <color name="white06_0DFFFFFF">#0DFFFFFF</color>
+
+    <color name="grey01_222222">#222222</color>
+    <color name="grey02_373737">#373737</color>
+
+    <color name="purple_7F75EE">#7F75EE</color>
+    <color name="red_FF5F5F">#FF5F5F</color>
+
 </resources>
