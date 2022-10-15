@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/splash_background"
-    tools:context=".SignInActivity">
+    tools:context=".feature.login.SignInActivity">
 
     <ImageView
         android:id="@+id/iv_signin_logo"
@@ -75,6 +75,7 @@
         android:paddingBottom="10dp"
         android:textAppearance="@style/M14"
         android:textColorHint="@color/white03_66FFFFFF"
+android:inputType="textPassword"
         app:layout_constraintBottom_toBottomOf="@+id/tv_signin_pwtxt"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/tv_signin_id"
