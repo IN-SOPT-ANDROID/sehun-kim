@@ -9,10 +9,21 @@
 
 
     <!-- 로그인 뷰 -->
-    <string name="tv_signin_idtxt">ID</string>
+    <string name="tv_signin_id">ID</string>
     <string name="et_signin_id">아이디를 입력하세요</string>
-    <string name="tv_signin_pwtxt">PW</string>
+    <string name="tv_signin_pw">PW</string>
     <string name="et_signin_pw">비밀번호를 입력하세요</string>
     <string name="tv_signin_loginbtn">LOGIN</string>
     <string name="tv_signin_signupbtn">JOIN</string>
+
+    <!-- 회원가입 뷰 -->
+    <string name="tv_signup_signup">회원가입</string>
+    <string name="tv_signup_id">ID</string>
+    <string name="et_signup_id">최대 8글자(공백X)</string>
+    <string name="tv_signup_pw">PW</string>
+    <string name="et_signup_pw">최대 15글자(공백X)</string>
+    <string name="tv_signup_mbti">mbti</string>
+    <string name="et_signup_mbti">최대 4글자(공백X)</string>
+    <string name="tv_signup_donebtn">회원가입 완료</string>
+
 </resources>
