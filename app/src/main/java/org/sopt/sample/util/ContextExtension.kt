@@ -5,7 +5,7 @@ import android.content.res.Resources
 import android.widget.Toast
 import kotlin.math.roundToInt
 
-fun Context.shortToast(message: String) {
+fun Context.shortToast(message: Int) {
     Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
 }
 
