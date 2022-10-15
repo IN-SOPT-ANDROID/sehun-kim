@@ -19,9 +19,9 @@
     <!-- 회원가입 뷰 -->
     <string name="tv_signup_signup">회원가입</string>
     <string name="tv_signup_id">ID*</string>
-    <string name="et_signup_id">최대 8글자</string>
+    <string name="et_signup_id">최대 10글자</string>
     <string name="tv_signup_pw">PW*</string>
-    <string name="et_signup_pw">최대 15글자</string>
+    <string name="et_signup_pw">최대 12글자</string>
     <string name="tv_signup_mbti">mbti</string>
     <string name="et_signup_mbti">최대 4글자</string>
     <string name="tv_signup_donebtn">회원가입 완료</string>
