@@ -13,10 +13,13 @@
         android:theme="@style/Theme.INSOPTAndroidPractice"
         tools:targetApi="31">
         <activity
-            android:name=".SignInActivity"
+            android:name=".feature.login.SignUpActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".feature.login.SignInActivity"
+            android:exported="false" />
+        <activity
+            android:name=".feature.home.MainActivity"
             android:exported="true" />
     </application>
 

@@ -1,4 +1,4 @@
-package org.sopt.sample
+package org.sopt.sample.feature.home
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
