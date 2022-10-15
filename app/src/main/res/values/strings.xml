@@ -10,9 +10,9 @@
 
     <!-- 로그인 뷰 -->
     <string name="tv_signin_idtxt">ID</string>
-    <string name="tv_signin_id">아이디를 입력하세요</string>
+    <string name="et_signin_id">아이디를 입력하세요</string>
     <string name="tv_signin_pwtxt">PW</string>
-    <string name="tv_signin_pw">비밀번호를 입력하세요</string>
+    <string name="et_signin_pw">비밀번호를 입력하세요</string>
     <string name="tv_signin_loginbtn">LOGIN</string>
     <string name="tv_signin_signupbtn">JOIN</string>
 </resources>
