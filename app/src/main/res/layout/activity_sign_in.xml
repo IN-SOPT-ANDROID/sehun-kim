@@ -130,11 +130,19 @@
         android:id="@+id/tv_signin_auto"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="55dp"
-        android:padding="10dp"
+        android:layout_marginBottom="10dp"
         android:text="@string/tv_signin_auto"
-        android:textAppearance="@style/M10"
-        android:textColor="@drawable/selector_signin_auto"
+        android:textAppearance="@style/R12"
+        android:textColor="@color/white01_FFFFFF"
         app:layout_constraintBottom_toTopOf="@+id/et_signin_id"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toStartOf="@+id/cb_signin_checkbox" />
+
+    <CheckBox
+        android:id="@+id/cb_signin_checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:buttonTint="@color/white01_FFFFFF"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_signin_auto"
+        app:layout_constraintEnd_toEndOf="@+id/et_signin_id"
+        app:layout_constraintTop_toTopOf="@+id/tv_signin_auto" />
 </androidx.constraintlayout.widget.ConstraintLayout>
