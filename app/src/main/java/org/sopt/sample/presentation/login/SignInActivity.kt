@@ -29,7 +29,7 @@ class SignInActivity : AppCompatActivity() {
         checkAutoLogin()
     }
 
-    private fun setListeners() {
+    private fun setListeners() { // setOnClickListener 이벤트 함수
         val intentToSignUp = Intent(this, SignUpActivity::class.java)
         val intentToMain = Intent(this, MainActivity::class.java)
         val id = binding.etSigninId.text.toString()
@@ -41,11 +41,11 @@ class SignInActivity : AppCompatActivity() {
             }
 
             tvSigninLoginbtn.setOnClickListener {
-                if (etSigninId.text.isEmpty() or etSigninPw.text.isEmpty()) {
+                if (etSigninId.text.isEmpty() or etSigninPw.text.isEmpty()) { // ID,PW 빈 텍스트 검사
                     shortToast(R.string.tm_signin_login)
                 } else {
 
-                    if (cbSigninCheckbox.isChecked) {
+                    if (cbSigninCheckbox.isChecked) { // true(체크) -> setSharedPreferences 함수 호출
                         setSharedPreferences(id, pw, cbSigninCheckbox.isChecked)
                         startActivity(intentToMain)
                     } else {
@@ -56,7 +56,7 @@ class SignInActivity : AppCompatActivity() {
             }
 
             cbSigninCheckbox.setOnClickListener {
-                cbSigninCheckbox.isChecked = cbSigninCheckbox.isChecked
+                cbSigninCheckbox.isChecked = cbSigninCheckbox.isChecked // 자동로그인 체크 On/Off
                 if (cbSigninCheckbox.isChecked) {
                     shortToast(R.string.tm_signin_autoon)
                 } else shortToast(R.string.tm_signin_autooff)
@@ -65,6 +65,7 @@ class SignInActivity : AppCompatActivity() {
     }
 
     private fun setSharedPreferences(id: String, pw: String, value: Boolean) {
+        // 유저데이터 및 자동로그인 체크 여부 전달
         Log.d("******value******", "$value")
         with(loginSharedPreferences) {
             saveLoginInfo(
@@ -77,7 +78,7 @@ class SignInActivity : AppCompatActivity() {
         }
     }
 
-    private fun checkAutoLogin() {
+    private fun checkAutoLogin() { // 앱 시작 시, 자동로그인 체크 여부 확인
         val intentToMain = Intent(this, MainActivity::class.java)
 
         if (loginSharedPreferences.getAutoLogin(this)) {
@@ -87,14 +88,14 @@ class SignInActivity : AppCompatActivity() {
         }
     }
 
-    private fun startLauncher() {
+    private fun startLauncher() { // registerForActivity 초기화 -> setText 함수호출
         resultLauncher =
             registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
                 setText(result)
             }
     }
 
-    private fun setText(result: ActivityResult) {
+    private fun setText(result: ActivityResult) { // SignUpActivity 데이터 텍스트 박스 지정
         if (result.resultCode == Activity.RESULT_OK) {
             binding.etSigninId.setText(result.data?.getStringExtra("id"))
             binding.etSigninPw.setText(result.data?.getStringExtra("pw"))

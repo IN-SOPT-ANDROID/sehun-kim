@@ -16,16 +16,16 @@ class SignUpActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivitySignUpBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        clickEvent()
+        setListeners()
     }
 
-    private fun clickEvent() {
+    private fun setListeners() { // setOnClickListener 이벤트 함수
         binding.tvSignupDonebtn.setOnClickListener {
             checkText()
         }
     }
 
-    private fun checkText() {
+    private fun checkText() { // 회원가입 텍스트 분기처리, snackBar
         with(binding) {
             val etId = etSignupId.text.toString()
             val etPw = etSignupPw.text.toString()
@@ -43,7 +43,7 @@ class SignUpActivity : AppCompatActivity() {
         }
     }
 
-    private fun passIntent(etId: String, etPw: String) {
+    private fun passIntent(etId: String, etPw: String) { // SignInActivity 텍스트 데이터 전달
         val intentToSignIn = Intent(this, SignInActivity::class.java).apply {
             putExtra("id", etId)
             putExtra("pw", etPw)
