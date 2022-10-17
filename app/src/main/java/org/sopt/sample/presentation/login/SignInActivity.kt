@@ -3,6 +3,7 @@ package org.sopt.sample.presentation.login
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.result.ActivityResult
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
@@ -17,7 +18,7 @@ import org.sopt.sample.util.shortToast
 class SignInActivity : AppCompatActivity() {
     private lateinit var binding: ActivitySignInBinding
     private lateinit var resultLauncher: ActivityResultLauncher<Intent>
-    private lateinit var loginSharedPreferences: LoginSharedPreferences
+    private val loginSharedPreferences by lazy { LoginSharedPreferences(this) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,11 +26,14 @@ class SignInActivity : AppCompatActivity() {
         setContentView(binding.root)
         startLauncher()
         clickEvent()
+        checkAutoLogin()
     }
 
     private fun clickEvent() {
         val intentToSignUp = Intent(this, SignUpActivity::class.java)
         val intentToMain = Intent(this, MainActivity::class.java)
+        val id = binding.etSigninId.text.toString()
+        val pw = binding.etSigninPw.text.toString()
 
         with(binding) {
             tvSigninSignupbtn.setOnClickListener {
@@ -37,26 +41,49 @@ class SignInActivity : AppCompatActivity() {
             }
 
             tvSigninLoginbtn.setOnClickListener {
-                shortToast(R.string.sb_signin_success)
-                startActivity(intentToMain)
+                if (etSigninId.text.isEmpty() or etSigninPw.text.isEmpty()) {
+                    shortToast(R.string.tm_signin_login)
+                } else {
+                    if (cbSigninCheckbox.isChecked) {
+                        setSharedPreferences(id, pw, cbSigninCheckbox.isChecked)
+                        startActivity(intentToMain)
+                    } else {
+                        shortToast(R.string.sb_signin_success)
+                        startActivity(intentToMain)
+                    }
+                }
             }
 
-            tvSigninAuto.setOnClickListener {
-                val id = etSigninId.text.toString()
-                val pw = etSigninPw.text.toString()
-                initSharedPreferences(id, pw)
+            cbSigninCheckbox.setOnClickListener {
+                cbSigninCheckbox.isChecked = cbSigninCheckbox.isChecked
+                if (cbSigninCheckbox.isChecked) {
+                    shortToast(R.string.tm_signin_autoon)
+                } else shortToast(R.string.tm_signin_autooff)
             }
         }
     }
 
-    private fun initSharedPreferences(id: String, pw: String) {
-        loginSharedPreferences = LoginSharedPreferences(this@SignInActivity)
-        loginSharedPreferences.saveLoginInfo(
-            LoginInfo(
-                id = id,
-                pw = pw
+    private fun setSharedPreferences(id: String, pw: String, value: Boolean) {
+        Log.d("******value******", "$value")
+        with(loginSharedPreferences) {
+            saveLoginInfo(
+                LoginInfo(
+                    id = id,
+                    pw = pw
+                )
             )
-        )
+            setAutoLogin(value)
+        }
+    }
+
+    private fun checkAutoLogin() {
+        val intentToMain = Intent(this, MainActivity::class.java)
+
+        if (loginSharedPreferences.getAutoLogin(this)) {
+            shortToast(R.string.sb_signin_success)
+            startActivity(intentToMain)
+            finish()
+        }
     }
 
     private fun startLauncher() {

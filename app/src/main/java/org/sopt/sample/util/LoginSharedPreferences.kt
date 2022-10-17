@@ -23,8 +23,19 @@ class LoginSharedPreferences(context: Context) {
         }
     }
 
+    fun getAutoLogin(context: Context): Boolean {
+        return sharedPreferences.getBoolean(LOGIN_BOOLEAN, false)
+    }
+
+    fun setAutoLogin(value: Boolean) {
+        sharedPreferences.edit()
+            .putBoolean(LOGIN_BOOLEAN, value)
+            .apply()
+    }
+
     companion object {
-        private const val LOGIN_ID = "loginid"
-        private const val LOGIN_PW = "loginpw"
+        private const val LOGIN_BOOLEAN = "LOGIN_BOOLEAN"
+        private const val LOGIN_ID = "LOGIN_ID"
+        private const val LOGIN_PW = "LOGIN_PW"
     }
 }

@@ -17,6 +17,9 @@
     <string name="tv_signin_signupbtn">JOIN</string>
     <string name="sb_signin_success">로그인에 성공하셨습니다</string>
     <string name="tv_signin_auto">AUTO</string>
+    <string name="tm_signin_autoon">자동로그인이 설정되었습니다</string>
+    <string name="tm_signin_autooff">자동로그인이 해제되었습니다</string>
+    <string name="tm_signin_login">아이디 혹은 비밀번호를 입력하세요</string>
 
     <!-- 회원가입 뷰 -->
     <string name="tv_signup_signup">회원가입</string>
