@@ -12,4 +12,4 @@ fun Context.shortToast(message: Int) {
 fun Context.dpToPixel(dp: Int): Int =
     (dp * resources.displayMetrics.density).roundToInt()
 
-fun Int.dpToPixel(): Int = this * Resources.getSystem().displayMetrics.density.roundToInt()
+

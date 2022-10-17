@@ -25,11 +25,11 @@ class SignInActivity : AppCompatActivity() {
         binding = ActivitySignInBinding.inflate(layoutInflater)
         setContentView(binding.root)
         startLauncher()
-        clickEvent()
+        setListeners()
         checkAutoLogin()
     }
 
-    private fun clickEvent() {
+    private fun setListeners() {
         val intentToSignUp = Intent(this, SignUpActivity::class.java)
         val intentToMain = Intent(this, MainActivity::class.java)
         val id = binding.etSigninId.text.toString()
@@ -44,6 +44,7 @@ class SignInActivity : AppCompatActivity() {
                 if (etSigninId.text.isEmpty() or etSigninPw.text.isEmpty()) {
                     shortToast(R.string.tm_signin_login)
                 } else {
+
                     if (cbSigninCheckbox.isChecked) {
                         setSharedPreferences(id, pw, cbSigninCheckbox.isChecked)
                         startActivity(intentToMain)
