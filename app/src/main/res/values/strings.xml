@@ -16,6 +16,7 @@
     <string name="tv_signin_loginbtn">LOGIN</string>
     <string name="tv_signin_signupbtn">JOIN</string>
     <string name="sb_signin_success">로그인에 성공하셨습니다</string>
+    <string name="tv_signin_auto">AUTO</string>
 
     <!-- 회원가입 뷰 -->
     <string name="tv_signup_signup">회원가입</string>

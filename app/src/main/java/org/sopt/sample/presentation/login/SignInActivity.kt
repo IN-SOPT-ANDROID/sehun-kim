@@ -1,4 +1,4 @@
-package org.sopt.sample.feature.login
+package org.sopt.sample.presentation.login
 
 import android.app.Activity
 import android.content.Intent
@@ -8,23 +8,26 @@ import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import org.sopt.sample.R
+import org.sopt.sample.data.local.LoginInfo
 import org.sopt.sample.databinding.ActivitySignInBinding
-import org.sopt.sample.feature.home.MainActivity
+import org.sopt.sample.presentation.home.MainActivity
+import org.sopt.sample.util.LoginSharedPreferences
 import org.sopt.sample.util.shortToast
 
 class SignInActivity : AppCompatActivity() {
     private lateinit var binding: ActivitySignInBinding
     private lateinit var resultLauncher: ActivityResultLauncher<Intent>
+    private lateinit var loginSharedPreferences: LoginSharedPreferences
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivitySignInBinding.inflate(layoutInflater)
         setContentView(binding.root)
         startLauncher()
-        isClickEvent()
+        clickEvent()
     }
 
-    private fun isClickEvent() {
+    private fun clickEvent() {
         val intentToSignUp = Intent(this, SignUpActivity::class.java)
         val intentToMain = Intent(this, MainActivity::class.java)
 
@@ -37,7 +40,23 @@ class SignInActivity : AppCompatActivity() {
                 shortToast(R.string.sb_signin_success)
                 startActivity(intentToMain)
             }
+
+            tvSigninAuto.setOnClickListener {
+                val id = etSigninId.text.toString()
+                val pw = etSigninPw.text.toString()
+                initSharedPreferences(id, pw)
+            }
         }
+    }
+
+    private fun initSharedPreferences(id: String, pw: String) {
+        loginSharedPreferences = LoginSharedPreferences(this@SignInActivity)
+        loginSharedPreferences.saveLoginInfo(
+            LoginInfo(
+                id = id,
+                pw = pw
+            )
+        )
     }
 
     private fun startLauncher() {

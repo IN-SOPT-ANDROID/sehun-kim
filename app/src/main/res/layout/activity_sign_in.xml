@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/splash_background"
-    tools:context=".feature.login.SignInActivity">
+    tools:context=".presentation.login.SignInActivity">
 
     <ImageView
         android:id="@+id/iv_signin_logo"
@@ -125,4 +125,16 @@
         app:layout_constraintStart_toEndOf="@+id/tv_signin_loginbtn"
         app:layout_constraintTop_toTopOf="@+id/tv_signin_loginbtn"
         app:srcCompat="@drawable/icn_separate" />
+
+    <TextView
+        android:id="@+id/tv_signin_auto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="55dp"
+        android:padding="10dp"
+        android:text="@string/tv_signin_auto"
+        android:textAppearance="@style/M10"
+        android:textColor="@drawable/selector_signin_auto"
+        app:layout_constraintBottom_toTopOf="@+id/et_signin_id"
+        app:layout_constraintEnd_toEndOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

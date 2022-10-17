@@ -1,4 +1,4 @@
-package org.sopt.sample.feature.login
+package org.sopt.sample.presentation.login
 
 import android.app.Activity
 import android.content.Intent
