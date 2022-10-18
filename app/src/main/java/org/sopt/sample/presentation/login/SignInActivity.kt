@@ -11,7 +11,7 @@ import androidx.appcompat.app.AppCompatActivity
 import org.sopt.sample.R
 import org.sopt.sample.data.local.LoginInfo
 import org.sopt.sample.databinding.ActivitySignInBinding
-import org.sopt.sample.presentation.home.MainActivity
+import org.sopt.sample.presentation.MainActivity
 import org.sopt.sample.util.LoginSharedPreferences
 import org.sopt.sample.util.shortToast
 

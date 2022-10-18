@@ -1,4 +1,4 @@
-package org.sopt.sample.presentation.home
+package org.sopt.sample.presentation
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
