@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/splash_background"
+    tools:context=".presentation.login.SignUpActivity">
+
+    <TextView
+        android:id="@+id/tv_signup_signup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:text="@string/tv_signup_signup"
+        android:textAppearance="@style/B28"
+        android:textColor="@color/white01_FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_signup_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="45dp"
+        android:layout_marginTop="80dp"
+        android:text="@string/tv_signup_id"
+        android:textAppearance="@style/Sb18"
+        android:textColor="@color/white01_FFFFFF"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_signup_signup" />
+
+    <TextView
+        android:id="@+id/tv_signup_pw"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="45dp"
+        android:text="@string/tv_signup_pw"
+        android:textAppearance="@style/Sb18"
+        android:textColor="@color/white01_FFFFFF"
+        app:layout_constraintEnd_toEndOf="@+id/tv_signup_id"
+        app:layout_constraintStart_toStartOf="@+id/tv_signup_id"
+        app:layout_constraintTop_toBottomOf="@+id/tv_signup_id" />
+
+    <TextView
+        android:id="@+id/tv_signup_mbti"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="45dp"
+        android:text="@string/tv_signup_mbti"
+        android:textAppearance="@style/Sb18"
+        android:textColor="@color/white01_FFFFFF"
+        app:layout_constraintEnd_toEndOf="@+id/tv_signup_pw"
+        app:layout_constraintStart_toStartOf="@+id/tv_signup_pw"
+        app:layout_constraintTop_toBottomOf="@+id/tv_signup_pw" />
+
+    <TextView
+        android:id="@+id/tv_signup_donebtn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="50dp"
+        android:background="@drawable/rectangle_border_8dp"
+        android:paddingTop="12dp"
+        android:paddingBottom="12dp"
+        android:text="@string/tv_signup_donebtn"
+        android:textAlignment="center"
+        android:textAppearance="@style/Sb18"
+        android:textColor="@color/white01_FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/et_signup_mbti"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rectangle_border_10dp_white05"
+        android:hint="@string/et_signup_mbti"
+        android:maxLength="4"
+        android:maxLines="1"
+        android:minHeight="48dp"
+        android:paddingStart="15dp"
+        android:paddingEnd="20dp"
+        android:textAppearance="@style/M14"
+        android:textColor="@color/white01_FFFFFF"
+        android:textColorHint="@color/white03_66FFFFFF"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_signup_mbti"
+        app:layout_constraintEnd_toEndOf="@+id/et_signup_pw"
+        app:layout_constraintStart_toStartOf="@+id/et_signup_pw"
+        app:layout_constraintTop_toTopOf="@+id/tv_signup_mbti" />
+
+    <EditText
+        android:id="@+id/et_signup_pw"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rectangle_border_10dp_white05"
+        android:hint="@string/et_signup_pw"
+        android:inputType="textPassword"
+        android:maxLength="12"
+        android:maxLines="1"
+        android:minHeight="48dp"
+        android:paddingStart="15dp"
+        android:paddingEnd="20dp"
+        android:textAppearance="@style/M14"
+        android:textColor="@color/white01_FFFFFF"
+        android:textColorHint="@color/white03_66FFFFFF"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_signup_pw"
+        app:layout_constraintEnd_toEndOf="@+id/et_signup_id"
+        app:layout_constraintStart_toStartOf="@+id/et_signup_id"
+        app:layout_constraintTop_toTopOf="@+id/tv_signup_pw" />
+
+    <EditText
+        android:id="@+id/et_signup_id"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="55dp"
+        android:background="@drawable/rectangle_border_10dp_white05"
+        android:hint="@string/et_signup_id"
+        android:maxLength="10"
+        android:maxLines="1"
+        android:minHeight="48dp"
+        android:paddingStart="15dp"
+        android:paddingEnd="20dp"
+        android:textAppearance="@style/M14"
+        android:textColor="@color/white01_FFFFFF"
+        android:textColorHint="@color/white03_66FFFFFF"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_signup_id"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tv_signup_id"
+        app:layout_constraintTop_toTopOf="@+id/tv_signup_id" />
+</androidx.constraintlayout.widget.ConstraintLayout>
