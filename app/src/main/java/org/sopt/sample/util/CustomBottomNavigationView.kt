@@ -10,14 +10,11 @@ import org.sopt.sample.R
 class CustomBottomNavigationView : BottomNavigationView {
     private var mPath: Path = Path()
     private var mPaint: Paint = Paint()
-
     private val CURVE_CIRCLE_RADIUS = 64 / 2 // 움푹파이는자식
-
     private val mFirstCurveStartPoint = Point()
     private val mFirstCurveEndPoint = Point()
     private val mFirstCurveControlPoint1 = Point()
     private val mFirstCurveControlPoint2 = Point()
-
     private var mSecondCurveStartPoint = Point()
     private val mSecondCurveEndPoint = Point()
     private val mSecondCurveControlPoint1 = Point()

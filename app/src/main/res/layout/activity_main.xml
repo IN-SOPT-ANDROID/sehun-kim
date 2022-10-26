@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/grey01_222222"
-    >
+    android:background="@color/grey01_222222">
 
     <org.sopt.sample.util.CustomBottomNavigationView
         android:id="@+id/bnv_main_customnav"
@@ -24,20 +23,19 @@
         tools:menu="@menu/menu_main_bnv" />
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/iv_main_search"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="35dp"
         app:layout_constraintBottom_toBottomOf="@+id/bnv_main_customnav"
-        app:srcCompat="@drawable/ic_navibar_btn_record"
-        tools:layout_editor_absoluteX="171dp" />
+        app:srcCompat="@drawable/ic_navibar_btn_record" />
 
     <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/fragmentContainerView"
+        android:id="@+id/fcv_main"
         android:name="org.sopt.sample.presentation.home.HomeFragment"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/bnv_main_customnav"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_main_search"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

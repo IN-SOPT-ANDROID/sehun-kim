@@ -13,7 +13,7 @@
         android:theme="@style/Theme.INSOPTAndroidPractice"
         tools:targetApi="31">
         <activity
-            android:name=".SearchActivity"
+            android:name=".presentation.search.SearchActivity"
             android:exported="false" />
         <activity
             android:name=".presentation.login.SignUpActivity"
