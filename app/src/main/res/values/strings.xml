@@ -34,7 +34,8 @@
     <string name="et_signup_mbti">최대 4글자</string>
     <string name="tv_signup_donebtn">회원가입 완료</string>
     <string name="sb_signup_done">회원가입이 완료되었습니다</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 
+    <!-- 홈 뷰 -->
+    <string name="tv_home_name">SEHUN KIM</string>
+    <string name="tv_home_id">s9hn</string>
 </resources>

@@ -27,7 +27,7 @@ class SignUpActivity : AppCompatActivity() {
 
     private fun checkText() { // 회원가입 텍스트 분기처리, snackBar
         with(binding) {
-            val etId = etSignupId.text.toString()
+            val etId = etSignupId.text.toString() // viewmodel
             val etPw = etSignupPw.text.toString()
 
             if (etId.isEmpty() or etPw.isEmpty()) {
