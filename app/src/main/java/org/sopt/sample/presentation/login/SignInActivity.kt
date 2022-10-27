@@ -3,22 +3,20 @@ package org.sopt.sample.presentation.login
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import androidx.activity.result.ActivityResult
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import org.sopt.sample.R
-import org.sopt.sample.data.local.LoginInfo
 import org.sopt.sample.databinding.ActivitySignInBinding
-import org.sopt.sample.presentation.home.MainActivity
-import org.sopt.sample.util.LoginSharedPreferences
+import org.sopt.sample.presentation.MainActivity
 import org.sopt.sample.util.shortToast
 
 class SignInActivity : AppCompatActivity() {
     private lateinit var binding: ActivitySignInBinding
     private lateinit var resultLauncher: ActivityResultLauncher<Intent>
-    private val loginSharedPreferences by lazy { LoginSharedPreferences(this) }
+    private val signInViewModel: SignInViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -46,7 +44,7 @@ class SignInActivity : AppCompatActivity() {
                 } else {
 
                     if (cbSigninCheckbox.isChecked) { // true(체크) -> setSharedPreferences 함수 호출
-                        setSharedPreferences(id, pw, cbSigninCheckbox.isChecked)
+                        signInViewModel.setSharedPreferences(id, pw, cbSigninCheckbox.isChecked)
                         startActivity(intentToMain)
                     } else {
                         shortToast(R.string.sb_signin_success)
@@ -64,24 +62,10 @@ class SignInActivity : AppCompatActivity() {
         }
     }
 
-    private fun setSharedPreferences(id: String, pw: String, value: Boolean) {
-        // 유저데이터 및 자동로그인 체크 여부 전달
-        Log.d("******value******", "$value")
-        with(loginSharedPreferences) {
-            saveLoginInfo(
-                LoginInfo(
-                    id = id,
-                    pw = pw
-                )
-            )
-            setAutoLogin(value)
-        }
-    }
-
     private fun checkAutoLogin() { // 앱 시작 시, 자동로그인 체크 여부 확인
         val intentToMain = Intent(this, MainActivity::class.java)
 
-        if (loginSharedPreferences.getAutoLogin(this)) {
+        if (signInViewModel.checkAutoLogin()) {
             shortToast(R.string.sb_signin_success)
             startActivity(intentToMain)
             finish()

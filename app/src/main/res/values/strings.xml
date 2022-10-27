@@ -4,8 +4,8 @@
 
     <!-- 바텀네비게이션 -->
     <string name="bnv_main_home">홈</string>
-    <string name="bnv_main_write">기록하기</string>
-    <string name="bnv_main_storage">보관하기</string>
+    <string name="bnv_main_search">검색</string>
+    <string name="bnv_main_mypage">마이페이지</string>
 
 
     <!-- 로그인 뷰 -->
@@ -35,4 +35,7 @@
     <string name="tv_signup_donebtn">회원가입 완료</string>
     <string name="sb_signup_done">회원가입이 완료되었습니다</string>
 
+    <!-- 홈 뷰 -->
+    <string name="tv_home_name">SEHUN KIM</string>
+    <string name="tv_home_id">s9hn</string>
 </resources>

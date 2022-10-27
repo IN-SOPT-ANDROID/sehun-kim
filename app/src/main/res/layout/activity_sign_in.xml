@@ -1,159 +1,178 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/splash_background"
-    tools:context=".presentation.login.SignInActivity">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <ImageView
-        android:id="@+id/iv_signin_logo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="250dp"
-        android:layout_marginBottom="290dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/rd_splash_rogo" />
+    <data>
+
+        <variable
+            name="signInInfo"
+            type="org.sopt.sample.data.local.LoginInfo" />
+
+        <variable
+            name="viewModel"
+            type="org.sopt.sample.presentation.login.SignInViewModel" />
+
+        <import type="android.view.View" />
 
 
-    <androidx.constraintlayout.helper.widget.Flow
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
-        app:constraint_referenced_ids="tv_signin_loginbtn,tv_signin_signupbtn"
-        app:flow_horizontlGap="12dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+    </data>
 
-    <TextView
-        android:id="@+id/tv_signin_idtxt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="45dp"
-        android:layout_marginBottom="45dp"
-        android:text="@string/tv_signin_id"
-        android:textAppearance="@style/Sb18"
-        android:textColor="@color/white01_FFFFFF"
-        app:layout_constraintBottom_toTopOf="@+id/tv_signin_pwtxt"
-        app:layout_constraintStart_toStartOf="parent" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/splash_background"
+        tools:context=".presentation.login.SignInActivity">
 
-    <EditText
-        android:id="@+id/et_signin_id"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
-        android:layout_marginEnd="55dp"
-        android:background="@drawable/rectangle_border_10dp_white05"
-        android:hint="@string/et_signin_id"
-        android:maxLength="10"
-        android:maxLines="1"
-        android:minHeight="48dp"
-        android:paddingStart="15dp"
-        android:paddingEnd="20dp"
-        android:textAppearance="@style/M14"
-        android:textColor="@color/white01_FFFFFF"
-        android:textColorHint="@color/white03_66FFFFFF"
-        app:layout_constraintBottom_toBottomOf="@+id/tv_signin_idtxt"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/tv_signin_idtxt"
-        app:layout_constraintTop_toTopOf="@+id/tv_signin_idtxt" />
+        <ImageView
+            android:id="@+id/iv_signin_logo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="250dp"
+            android:layout_marginBottom="290dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/rd_splash_rogo" />
 
-    <TextView
-        android:id="@+id/tv_signin_pwtxt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
-        android:text="@string/tv_signin_pw"
-        android:textAppearance="@style/Sb16"
-        android:textColor="@color/white01_FFFFFF"
-        app:layout_constraintBottom_toTopOf="@+id/tv_signin_loginbtn"
-        app:layout_constraintEnd_toEndOf="@+id/tv_signin_idtxt"
-        app:layout_constraintStart_toStartOf="@+id/tv_signin_idtxt" />
 
-    <EditText
-        android:id="@+id/et_signin_pw"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="55dp"
-        android:background="@drawable/rectangle_border_10dp_white05"
-        android:hint="@string/et_signin_pw"
-        android:inputType="textPassword"
-        android:maxLength="12"
-        android:maxLines="1"
-        android:minHeight="48dp"
-        android:paddingStart="15dp"
-        android:paddingEnd="20dp"
-        android:textAppearance="@style/M14"
-        android:textColor="@color/white01_FFFFFF"
-        android:textColorHint="@color/white03_66FFFFFF"
-        app:layout_constraintBottom_toBottomOf="@+id/tv_signin_pwtxt"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/et_signin_id"
-        app:layout_constraintTop_toTopOf="@+id/tv_signin_pwtxt" />
+        <androidx.constraintlayout.helper.widget.Flow
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            app:constraint_referenced_ids="tv_signin_loginbtn,tv_signin_signupbtn"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
-    <TextView
-        android:id="@+id/tv_signin_loginbtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="80dp"
-        android:layout_marginBottom="20dp"
-        android:padding="20dp"
-        android:text="@string/tv_signin_loginbtn"
-        android:textAppearance="@style/M14"
-        android:textColor="@color/white01_FFFFFF"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/imageView"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent" />
+        <TextView
+            android:id="@+id/tv_signin_idtxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="45dp"
+            android:layout_marginBottom="45dp"
+            android:text="@string/tv_signin_id"
+            android:textAppearance="@style/Sb18"
+            android:textColor="@color/white01_FFFFFF"
+            app:layout_constraintBottom_toTopOf="@+id/tv_signin_pwtxt"
+            app:layout_constraintStart_toStartOf="parent" />
 
-    <TextView
-        android:id="@+id/tv_signin_signupbtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="80dp"
-        android:padding="20dp"
-        android:text="@string/tv_signin_signupbtn"
-        android:textAppearance="@style/M14"
-        android:textColor="@color/white01_FFFFFF"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/imageView"
-        app:layout_constraintTop_toTopOf="@+id/imageView" />
+        <EditText
+            android:id="@+id/et_signin_id"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="55dp"
+            android:background="@drawable/rectangle_border_10dp_white05"
+            android:hint="@string/et_signin_id"
+            android:maxLength="10"
+            android:maxLines="1"
+            android:minHeight="48dp"
+            android:paddingStart="15dp"
+            android:paddingEnd="20dp"
+            android:text="@{signInInfo.id}"
+            android:textAppearance="@style/M14"
+            android:textColor="@color/white01_FFFFFF"
+            android:textColorHint="@color/white03_66FFFFFF"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_signin_idtxt"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tv_signin_idtxt"
+            app:layout_constraintTop_toTopOf="@+id/tv_signin_idtxt" />
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="@+id/tv_signin_loginbtn"
-        app:layout_constraintEnd_toStartOf="@+id/tv_signin_signupbtn"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/tv_signin_loginbtn"
-        app:layout_constraintTop_toTopOf="@+id/tv_signin_loginbtn"
-        app:srcCompat="@drawable/icn_separate" />
+        <TextView
+            android:id="@+id/tv_signin_pwtxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:text="@string/tv_signin_pw"
+            android:textAppearance="@style/Sb16"
+            android:textColor="@color/white01_FFFFFF"
+            app:layout_constraintBottom_toTopOf="@+id/tv_signin_loginbtn"
+            app:layout_constraintEnd_toEndOf="@+id/tv_signin_idtxt"
+            app:layout_constraintStart_toStartOf="@+id/tv_signin_idtxt" />
 
-    <TextView
-        android:id="@+id/tv_signin_auto"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:text="@string/tv_signin_auto"
-        android:textAppearance="@style/R12"
-        android:textColor="@color/white01_FFFFFF"
-        app:layout_constraintBottom_toTopOf="@+id/et_signin_id"
-        app:layout_constraintEnd_toStartOf="@+id/cb_signin_checkbox" />
+        <EditText
+            android:id="@+id/et_signin_pw"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="55dp"
+            android:background="@drawable/rectangle_border_10dp_white05"
+            android:hint="@string/et_signin_pw"
+            android:inputType="textPassword"
+            android:maxLength="12"
+            android:maxLines="1"
+            android:minHeight="48dp"
+            android:paddingStart="15dp"
+            android:paddingEnd="20dp"
+            android:text="@{signInInfo.pw}"
+            android:textAppearance="@style/M14"
+            android:textColor="@color/white01_FFFFFF"
+            android:textColorHint="@color/white03_66FFFFFF"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_signin_pwtxt"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/et_signin_id"
+            app:layout_constraintTop_toTopOf="@+id/tv_signin_pwtxt" />
 
-    <CheckBox
-        android:id="@+id/cb_signin_checkbox"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:buttonTint="@color/white01_FFFFFF"
-        app:layout_constraintBottom_toBottomOf="@+id/tv_signin_auto"
-        app:layout_constraintEnd_toEndOf="@+id/et_signin_id"
-        app:layout_constraintTop_toTopOf="@+id/tv_signin_auto" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/tv_signin_loginbtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="80dp"
+            android:layout_marginBottom="20dp"
+            android:padding="20dp"
+            android:text="@string/tv_signin_loginbtn"
+            android:textAppearance="@style/M14"
+            android:textColor="@color/white01_FFFFFF"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/imageView"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_signin_signupbtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="80dp"
+            android:padding="20dp"
+            android:text="@string/tv_signin_signupbtn"
+            android:textAppearance="@style/M14"
+            android:textColor="@color/white01_FFFFFF"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/imageView"
+            app:layout_constraintTop_toTopOf="@+id/imageView" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_signin_loginbtn"
+            app:layout_constraintEnd_toStartOf="@+id/tv_signin_signupbtn"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/tv_signin_loginbtn"
+            app:layout_constraintTop_toTopOf="@+id/tv_signin_loginbtn"
+            app:srcCompat="@drawable/icn_separate" />
+
+        <TextView
+            android:id="@+id/tv_signin_auto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:text="@string/tv_signin_auto"
+            android:textAppearance="@style/R12"
+            android:textColor="@color/white01_FFFFFF"
+            app:layout_constraintBottom_toTopOf="@+id/et_signin_id"
+            app:layout_constraintEnd_toStartOf="@+id/cb_signin_checkbox" />
+
+        <CheckBox
+            android:id="@+id/cb_signin_checkbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/white01_FFFFFF"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_signin_auto"
+            app:layout_constraintEnd_toEndOf="@+id/et_signin_id"
+            app:layout_constraintTop_toTopOf="@+id/tv_signin_auto" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
