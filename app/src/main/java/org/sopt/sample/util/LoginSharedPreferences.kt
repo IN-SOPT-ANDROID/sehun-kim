@@ -23,7 +23,7 @@ class LoginSharedPreferences(context: Context) {
         }
     }
 
-    fun getAutoLogin(context: Context): Boolean {
+    fun getAutoLogin(): Boolean {
         return sharedPreferences.getBoolean(LOGIN_BOOLEAN, false)
     }
 
