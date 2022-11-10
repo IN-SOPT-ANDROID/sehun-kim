@@ -7,7 +7,7 @@
 
         <variable
             name="viewModel"
-            type="org.sopt.sample.presentation.login.SignInViewModel" />
+            type="org.sopt.sample.presentation.login.signin.SignInViewModel" />
 
         <import type="android.view.View" />
 
@@ -18,7 +18,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/splash_background"
-        tools:context=".presentation.login.SignInActivity">
+        tools:context=".presentation.login.signin.SignInActivity">
 
         <ImageView
             android:id="@+id/iv_signin_logo"
