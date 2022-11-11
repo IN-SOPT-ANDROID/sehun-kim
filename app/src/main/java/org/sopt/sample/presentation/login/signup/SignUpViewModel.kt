@@ -24,8 +24,8 @@ class SignUpViewModel : ViewModel() {
         }
     }
 
-    suspend fun connectNetwork() { // suspend 붙여야하는지
-        viewModelScope.launch { // dispatcher
+    fun connectNetwork() {
+        viewModelScope.launch {
             runCatching {
                 signUpService.postSignUp(
                     RequestSignUp(
@@ -42,8 +42,7 @@ class SignUpViewModel : ViewModel() {
         }
     }
 
-    private fun checkSignUpInput(): Int { // 회원가입 텍스트 분기처리, snackBar
-
+    private fun checkSignUpInput(): Int {
         return if (email.value.isNullOrBlank() or
             password.value.isNullOrBlank() or
             name.value.isNullOrBlank()
