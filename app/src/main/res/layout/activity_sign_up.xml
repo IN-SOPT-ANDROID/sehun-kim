@@ -137,7 +137,7 @@
             android:minHeight="48dp"
             android:paddingStart="15dp"
             android:paddingEnd="20dp"
-            android:text="@={viewModel.id}"
+            android:text="@={viewModel.email}"
             android:textAppearance="@style/M14"
             android:textColor="@color/white01_FFFFFF"
             android:textColorHint="@color/white03_66FFFFFF"
