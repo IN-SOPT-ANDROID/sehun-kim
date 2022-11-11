@@ -1,4 +1,4 @@
-package org.sopt.sample.presentation.login
+package org.sopt.sample.presentation.login.signin
 
 import android.util.Log
 import androidx.lifecycle.LiveData
