@@ -5,7 +5,6 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.Observer
 import org.sopt.sample.data.local.SignUpMessage
 import org.sopt.sample.databinding.ActivitySignUpBinding
 import org.sopt.sample.presentation.login.signin.SignInActivity
@@ -31,10 +30,9 @@ class SignUpActivity : AppCompatActivity() {
 
     private fun observeCheckInput(): Int {
         var stateMessage = 0
-        val observeState = Observer<Int> {
+        signUpViewModel.checkInput.observe(this) {
             stateMessage = it
         }
-        signUpViewModel.checkInput.observe(this, observeState)
         return stateMessage
     }
 
