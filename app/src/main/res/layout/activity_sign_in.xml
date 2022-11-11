@@ -6,12 +6,8 @@
     <data>
 
         <variable
-            name="signInInfo"
-            type="org.sopt.sample.data.local.LoginInfo" />
-
-        <variable
             name="viewModel"
-            type="org.sopt.sample.presentation.login.SignInViewModel" />
+            type="org.sopt.sample.presentation.login.signin.SignInViewModel" />
 
         <import type="android.view.View" />
 
@@ -22,7 +18,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/splash_background"
-        tools:context=".presentation.login.SignInActivity">
+        tools:context=".presentation.login.signin.SignInActivity">
 
         <ImageView
             android:id="@+id/iv_signin_logo"
@@ -71,7 +67,7 @@
             android:minHeight="48dp"
             android:paddingStart="15dp"
             android:paddingEnd="20dp"
-            android:text="@{signInInfo.id}"
+            android:text="@={viewModel.id}"
             android:textAppearance="@style/M14"
             android:textColor="@color/white01_FFFFFF"
             android:textColorHint="@color/white03_66FFFFFF"
@@ -105,7 +101,7 @@
             android:minHeight="48dp"
             android:paddingStart="15dp"
             android:paddingEnd="20dp"
-            android:text="@{signInInfo.pw}"
+            android:text="@={viewModel.password}"
             android:textAppearance="@style/M14"
             android:textColor="@color/white01_FFFFFF"
             android:textColorHint="@color/white03_66FFFFFF"
@@ -171,6 +167,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:buttonTint="@color/white01_FFFFFF"
+
             app:layout_constraintBottom_toBottomOf="@+id/tv_signin_auto"
             app:layout_constraintEnd_toEndOf="@+id/et_signin_id"
             app:layout_constraintTop_toTopOf="@+id/tv_signin_auto" />
