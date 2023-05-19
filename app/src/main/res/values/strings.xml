@@ -23,14 +23,14 @@
 
     <!-- 회원가입 뷰 -->
     <string name="tv_signup_signup">회원가입</string>
-    <string name="sb_signup_necessary">ID와 PW는 필수항목입니다</string>
-    <string name="tv_signup_id">ID*</string>
+    <string name="sb_signup_necessary">빈 항목이 존재합니다</string>
+    <string name="tv_signup_id">EMAIL*</string>
     <string name="et_signup_id">6 ~ 10글자</string>
-    <string name="sb_signup_id">ID는 최소 6글자입니다</string>
+    <string name="sb_signup_email">이메일 형식이 아닙니다</string>
     <string name="tv_signup_pw">PW*</string>
     <string name="et_signup_pw">8 ~ 12글자</string>
-    <string name="sb_signup_pw">PW는 최소 8글자입니다</string>
-    <string name="tv_signup_mbti">mbti</string>
+    <string name="sb_signup_pw">패스워드는 최소 8글자입니다</string>
+    <string name="tv_signup_mbti">이름*</string>
     <string name="et_signup_mbti">최대 4글자</string>
     <string name="tv_signup_donebtn">회원가입 완료</string>
     <string name="sb_signup_done">회원가입이 완료되었습니다</string>
